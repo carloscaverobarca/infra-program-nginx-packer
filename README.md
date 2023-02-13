@@ -23,7 +23,7 @@ Packer needs a custom vpc with a subnet and a public ip to generate the AMI.
 2) Get the token using AWS CLI
 3) `terraform init` to configure the project
 4) `terraform plan` to prepare the provisioning
-5) `terraform apply` to create the network (SSH Key, VPC, Subnet, Security Group, etc). As the `ami` in the `aws_instance` the result is an error
+5) `terraform apply` to create the network (SSH Key, VPC, Subnet, Security Group, etc). As the `ami` in the `aws_instance` is empty the result is an error
 6) Copy `vpc-id` and `subnet-id` to Packer file `ami.pkr.hcl`
    1) `module.network.aws_vpc.vpc_ccb: Creation complete after 1s [id=`**vpc-XXXXXXX**`]`
    2) `module.network.aws_subnet.subnets["web"]: Creation complete after 11s [id=`**subnet-XXXXX**`]`      
