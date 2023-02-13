@@ -32,7 +32,7 @@ Packer needs a custom vpc with a subnet and a public ip to generate the AMI.
    2) `packer build .`
 8) Copy the result of Packer execution `ami-XXXX`. We can use `AWS CLI` to inspect the created `AMI` and find the `ImageId`:
    1) `$ aws ec2 describe-images --owner self --profile <your-profile> --region <your-region>`
-9) Fill in `main.tf` the `ami` in the `aws_instance` with the `ImageId` just created
+9) Fill in `variables.tf` the `ami` var with the `AMI` or `ImageId` just copied
 10) Execute again `terraform apply` to create the EC2 instance with the Nginx golden image
 11) Access the `custom_public_ip` given as a result of terraform execution and Nginx welcome page should appear 
 12) `terraform destroy` to remove all the resources from AWS
